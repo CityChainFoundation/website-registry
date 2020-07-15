@@ -11,6 +11,7 @@ header {
 .logo-link {
   color: var(--foreground);
   text-decoration: none;
+  white-space: normal;
 }
 
 .logo-link:hover {
@@ -128,5 +129,9 @@ header {
 @media only screen and (max-width: 600px) {
   .menu-text {
     display: none;
+  }
+
+  .logo-link {
+    font-size: 0.9em;
   }
 }

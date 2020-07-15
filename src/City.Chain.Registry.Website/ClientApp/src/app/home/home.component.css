@@ -55,4 +55,8 @@
    .splash-splitter {
       display: block;
    }
+
+   .splash-splitter-link {
+      border-left: none;
+   }
  }
