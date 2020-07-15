@@ -1,0 +1,58 @@
+@import "../../variables";
+
+.splash h1 {
+   color: var(--background);
+}
+
+.splash {
+   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("/assets/splash.jpg");
+   background-size: cover;
+   background-repeat: no-repeat;
+   min-height: 600px;
+   width: 100%;
+   color: var(--background);
+   margin-bottom: -100px;
+   padding-top: 6em;
+   vertical-align: baseline;
+}
+
+@media only screen and (min-width: 1200px) {
+   .splash {
+      min-height: 80vh;
+   }
+}
+
+.splash-text {
+   vertical-align: baseline;
+
+   margin-left: 4em;
+   margin-right: 4em;
+}
+
+.splash-splitter {
+   display: flex;
+   vertical-align: baseline;
+   border-top: 1px solid var(--border-alternative);
+}
+
+.splash-splitter-text {
+   flex-grow: 2;
+   font-size: 1.4em;
+   padding-top: 2em;
+   padding-right: 1em;
+}
+
+.splash-splitter-link {
+   flex-grow: auto;
+   border-left: 1px solid var(--border-alternative);
+   padding-left: 2em;
+   padding-top: 3em;
+   height: 100px;
+}
+
+
+@media only screen and (max-width: 500px) {
+   .splash-splitter {
+      display: block;
+   }
+ }

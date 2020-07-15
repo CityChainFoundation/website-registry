@@ -3,20 +3,25 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
-import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
+import { AboutComponent } from './about/about.component';
+import { AnnouncementsComponent } from './announcements/announcements.component';
+import { RegistryComponent } from './registry/registry.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
     HomeComponent,
-    CounterComponent,
-    FetchDataComponent
+    FetchDataComponent,
+    AboutComponent,
+    AnnouncementsComponent,
+    RegistryComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -24,9 +29,13 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
-    ])
+      // { path: 'counter', component: CounterComponent },
+      // { path: 'fetch-data', component: FetchDataComponent },
+      { path: 'registry', component: RegistryComponent },
+      { path: 'register', component: RegisterComponent },
+      { path: 'announcements', component: AnnouncementsComponent },
+      { path: 'about', component: AboutComponent },
+    ], { onSameUrlNavigation: 'reload' })
   ],
   providers: [],
   bootstrap: [AppComponent]
