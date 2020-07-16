@@ -50,7 +50,6 @@
    height: 100px;
 }
 
-
 @media only screen and (max-width: 500px) {
    .splash-splitter {
       display: block;
@@ -59,4 +58,8 @@
    .splash-splitter-link {
       border-left: none;
    }
- }
+
+   .splash {
+      background-position: 50% 0px;
+   }
+}
