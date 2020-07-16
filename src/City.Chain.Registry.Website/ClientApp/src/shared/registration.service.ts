@@ -16,7 +16,7 @@ export class RegistrationService {
    constructor() {
       this.registration = {
          type: 'PRIVATE',
-         identity: 'PTe6MFNouKATrLF5YbjxR1bsei2zwzdyLU'
+         identity: ''
       };
 
       this.organizationType = [
