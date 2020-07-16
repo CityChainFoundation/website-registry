@@ -15,6 +15,7 @@ export class RegistrationService {
 
    constructor() {
       this.registration = {
+         event: 'REGISTRATION',
          type: 'PRIVATE',
          identity: ''
       };
