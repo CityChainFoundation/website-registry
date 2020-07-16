@@ -24,7 +24,7 @@ export class RegisterComponent implements OnInit, OnDestroy {
     this.sub.unsubscribe();
   }
 
-  lookupIdentity() {
-    
+  lookupIdentity(identity: string) {
+
   }
 }
