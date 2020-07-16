@@ -22,51 +22,75 @@
 
    <p>After you have your identity published, you will be able to look it up and prefill some of the fields below.</p>
 
+   <p>You don't need to specify manager, accountant, director of board or any board members, but if you do, you must
+      ensure that
+      those individuals have their own identity on City Hub before continuing with the registration.</p>
+
+   <p>After you submit the signed entity registration, you will be presented with a payment address. The payment must be
+      completed within 24 hours, or the entity registration will be void.</p>
+
    <p><strong>Find your identity</strong></p>
 
    <div class="input-container">
-      <input type="text" name="name" placeholder="Identity">
+      <input type="text" name="name" [(ngModel)]="reg.registration.identity" placeholder="Identity">
       <a class="button" [routerLink]="['/register']">Lookup Identity <span class="mu mu-search"></span></a>
    </div>
 
    <p><strong>Registration</strong></p>
 
    <div class="input-container">
-      <input type="text" name="name" placeholder="Name">
+      <span>Linked Identity: </span>&nbsp;
+      <strong>PTe6MFNouKATrLF5YbjxR1bsei2zwzdyLU</strong>
+   </div>
 
-      <select name="entity-type" id="entity-type">
-         <option *ngFor="let type of organizationType" value="{{type.code}}">{{type.name}}</option>
+   <div class="input-container">
+      <input type="text" name="name" [(ngModel)]="reg.registration.name" placeholder="Name">
+
+      <select name="entity-type" id="entity-type" [(ngModel)]="reg.registration.type">
+         <option *ngFor="let type of reg.organizationType" value="{{type.code}}">{{type.name}}</option>
       </select>
    </div>
 
    <div class="input-container">
-      <input type="text" name="address" placeholder="Address">
-      <input type="text" name="website" placeholder="Website">
+      <input type="text" name="address" [(ngModel)]="reg.registration.address" placeholder="Address">
+      <input type="text" name="website" [(ngModel)]="reg.registration.website" placeholder="Website">
    </div>
 
    <div class="input-container">
-      <input type="text" name="established" placeholder="Established">
-      <input type="text" name="purpose" placeholder="Purpose">
+      <input type="text" name="established" [(ngModel)]="reg.registration.established"
+         placeholder="Established (YYYY-MM-DD)">
+      <input type="text" name="purpose" [(ngModel)]="reg.registration.purpose" placeholder="Purpose">
    </div>
 
    <div class="input-container">
-      <input type="text" name="manager" placeholder="Manager">
-      <input type="text" name="directory" placeholder="Directory of Board">
+      <input type="text" name="manager" [(ngModel)]="reg.registration.manager" placeholder="Manager">
+      <a class="button" [routerLink]="['/register']">Lookup Identity <span class="mu mu-search"></span></a>
    </div>
 
    <div class="input-container">
-      <input type="text" name="board" placeholder="Board">
-      <input type="text" name="purpose" placeholder="Signing Rights">
-      E.g. Two members of the board, manager and directory of board
+      <input type="text" name="directory" [(ngModel)]="reg.registration.director" placeholder="Directory of Board">
+      <a class="button" [routerLink]="['/register']">Lookup Identity <span class="mu mu-search"></span></a>
    </div>
 
    <div class="input-container">
-      <input type="text" name="purpose" placeholder="Accountant">
-      <input type="text" name="board" placeholder="Board">
+      <input type="text" name="board" [(ngModel)]="reg.registration.board" placeholder="Board member(s)"><a
+         class="button" [routerLink]="['/register']">Lookup Identity <span class="mu mu-search"></span></a>
    </div>
 
-   <p>
-      [Registration coming soon!]
+   <div class="input-container2">
+      <p>Signing rights:</p>
+      <div class="checkbox-container" *ngFor="let item of reg.signingRights"><input type="checkbox" [checked]="item.checked"
+            id="signing-rights-{{item.code}}" name="signing-rights-{{item.code}}"><label
+            for="signing-rights-{{item.code}}">{{item.name}}</label></div>
+   </div>
+
+   <div class="input-container">
+      <input type="text" name="purpose" [(ngModel)]="reg.registration.accountant" placeholder="Accountant">
+      <a class="button" [routerLink]="['/register']">Lookup Identity <span class="mu mu-search"></span></a>
+   </div>
+
+   <p><br><br>
+      <a class="button" [routerLink]="['/register/verify']">Continue <span class="mu mu-arrow-right"></span></a>
    </p>
 
 </div>

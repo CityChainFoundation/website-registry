@@ -11,6 +11,9 @@ import { AboutComponent } from './about/about.component';
 import { AnnouncementsComponent } from './announcements/announcements.component';
 import { RegistryComponent } from './registry/registry.component';
 import { RegisterComponent } from './register/register.component';
+import { RegisterVerifyComponent } from './register/verify.component';
+import { RegisterPaymentComponent } from './register/payment.component';
+import { RegisterSignComponent } from './register/sign.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { RegisterComponent } from './register/register.component';
     AboutComponent,
     AnnouncementsComponent,
     RegistryComponent,
-    RegisterComponent
+    RegisterComponent,
+    RegisterVerifyComponent,
+    RegisterSignComponent,
+    RegisterPaymentComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -33,6 +39,9 @@ import { RegisterComponent } from './register/register.component';
       // { path: 'fetch-data', component: FetchDataComponent },
       { path: 'registry', component: RegistryComponent },
       { path: 'register', component: RegisterComponent },
+      { path: 'register/verify', component: RegisterVerifyComponent },
+      { path: 'register/sign', component: RegisterSignComponent },
+      { path: 'register/payment', component: RegisterPaymentComponent },
       { path: 'announcements', component: AnnouncementsComponent },
       { path: 'announcements/:number', component: AnnouncementsComponent },
       { path: 'about', component: AboutComponent },
