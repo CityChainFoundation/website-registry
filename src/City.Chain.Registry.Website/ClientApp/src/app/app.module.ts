@@ -34,6 +34,7 @@ import { RegisterComponent } from './register/register.component';
       { path: 'registry', component: RegistryComponent },
       { path: 'register', component: RegisterComponent },
       { path: 'announcements', component: AnnouncementsComponent },
+      { path: 'announcements/:number', component: AnnouncementsComponent },
       { path: 'about', component: AboutComponent },
     ], { onSameUrlNavigation: 'reload' })
   ],

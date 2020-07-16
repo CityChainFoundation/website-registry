@@ -22,8 +22,6 @@ html {
   }
 }
 
-
-
 body {
   font-family: "Lato", sans-serif;
   font-weight: 300;
@@ -70,6 +68,15 @@ h1 {
 
 h2 {
   font-size: 2em;
+}
+
+a {
+  color: var(--link);
+}
+
+a:hover {
+  color: var(--link-hover);
+  text-decoration: none;
 }
 
 .underline {
