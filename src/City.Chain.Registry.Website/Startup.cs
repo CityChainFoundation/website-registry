@@ -40,6 +40,7 @@ namespace City.Chain.Registry.Website
             }
 
             app.UseStaticFiles();
+
             if (!env.IsDevelopment())
             {
                 app.UseSpaStaticFiles();

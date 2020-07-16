@@ -28,7 +28,8 @@
 
       <div class="ruler"></div>
 
-      <strong>{{announcement.id}}</strong> {{announcement.name}}
+      {{announcement.name}}<br>
+      <strong>{{announcement.id}}</strong>
 
       <div class="ruler"></div>
 
@@ -43,7 +44,8 @@
 
       <p>
          <br>
-         <a class="button" [routerLink]="['/announcements']">Back to list <span class="mu mu-arrow-left"></span></a>
+         <a class="button" [routerLink]="['/announcements']">Back to list <span class="mu mu-arrow-left"></span></a>&nbsp;
+         <a class="button" [routerLink]="['/announcements']">All announcements <span class="mu mu-arrow-right"></span></a>
          <br><br>
       </p>
 
