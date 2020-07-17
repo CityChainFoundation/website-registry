@@ -1,9 +1,12 @@
+using City.Chain.Registry.Website.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
+using System;
 
 namespace City.Chain.Registry.Website
 {
@@ -20,12 +23,48 @@ namespace City.Chain.Registry.Website
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddSingleton<NodeService>();
+
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+
+            services.AddSwaggerGen(
+                options =>
+                {
+                    string assemblyVersion = typeof(Startup).Assembly.GetName().Version.ToString();
+
+                    options.SwaggerDoc("indexer",
+                               new OpenApiInfo
+                               {
+                                   Title = "City Chain Registry API",
+                                   Version = assemblyVersion,
+                                   Description = ".",
+                                   Contact = new OpenApiContact
+                                   {
+                                       Name = "Blockcore",
+                                       Url = new Uri("https://registry.city-chain.org/")
+                                   }
+                               });
+
+                    //if (File.Exists(XmlCommentsFilePath))
+                    //{
+                    //    options.IncludeXmlComments(XmlCommentsFilePath);
+                    //}
+
+                    options.DescribeAllEnumsAsStrings();
+
+                    options.DescribeStringEnumsInCamelCase();
+
+                    options.EnableAnnotations();
+                });
+
+            services.AddSwaggerGenNewtonsoftSupport(); // explicit opt-in - needs to be placed after AddSwaggerGen()
         }
+
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -47,6 +86,17 @@ namespace City.Chain.Registry.Website
             }
 
             app.UseRouting();
+
+            app.UseSwagger(c =>
+            {
+                c.RouteTemplate = "docs/{documentName}/openapi.json";
+            });
+
+            app.UseSwaggerUI(c =>
+            {
+                c.RoutePrefix = "docs";
+                c.SwaggerEndpoint("/docs/indexer/openapi.json", "City Chain Registry API");
+            });
 
             app.UseEndpoints(endpoints =>
             {
