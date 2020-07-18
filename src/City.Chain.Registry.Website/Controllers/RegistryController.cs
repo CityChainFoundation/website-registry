@@ -23,9 +23,6 @@ namespace City.Chain.Registry.Website.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-
-
-
             return Ok();
         }
     }
