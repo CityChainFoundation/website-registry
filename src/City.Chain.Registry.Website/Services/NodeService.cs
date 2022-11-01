@@ -23,7 +23,7 @@ namespace City.Chain.Registry.Website.Services
         {
             var client = new RestClient(nodeApiUrl);
             client.UseNewtonsoftJson();
-            client.CachePolicy = new System.Net.Cache.RequestCachePolicy(System.Net.Cache.RequestCacheLevel.NoCacheNoStore);
+            //client.CachePolicy = new System.Net.Cache.RequestCachePolicy(System.Net.Cache.RequestCacheLevel.NoCacheNoStore);
             client.AddDefaultHeader("Node-Api-Key", nodeApiKey);
 
             return client;

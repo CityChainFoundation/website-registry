@@ -55,9 +55,9 @@ namespace City.Chain.Registry.Website
                     //    options.IncludeXmlComments(XmlCommentsFilePath);
                     //}
 
-                    options.DescribeAllEnumsAsStrings();
+                    //options.DescribeAllEnumsAsStrings();
 
-                    options.DescribeStringEnumsInCamelCase();
+                    //options.DescribeStringEnumsInCamelCase();
 
                     options.EnableAnnotations();
                 });

@@ -28,14 +28,14 @@ namespace City.Chain.Registry.Website.Controllers
 
             // Get the identity, if it exists.
             var request = new RestRequest($"/identity/{address}");
-            IRestResponse<string> response = client.Get<string>(request);
+            var response = client.Get<string>(request);
 
             //if (response.StatusCode != System.Net.HttpStatusCode.OK)
             //{
             //   throw new ApplicationException(response.ErrorMessage);
             //}
 
-            return Ok(response.Content);
+            return Ok(response);
         }
     }
 }
