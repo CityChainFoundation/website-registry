@@ -10,6 +10,8 @@ Registrations in this registry does not result in any legal registration in the 
 
 The City Chain Registry CC is a crypto company registered in this registry. The crypto company has no physical locality or regionality, and is not registered in any national registry.
 
+![City Chain Registry screenshot](screenshot.png)
+
 ## Description
 
 Work-in-progress:
