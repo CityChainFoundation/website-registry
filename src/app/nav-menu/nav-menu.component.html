@@ -1,7 +1,8 @@
 <header>
 
   <div class="title">
-    <a class="logo-link" [routerLink]="['/']">City Chain <strong>Identity</strong></a><span class="logo-icon hide-mobile mu mu-user"></span>
+    <a class="logo-link" [routerLink]="['/']">City Chain <strong>Registry</strong></a>
+    &nbsp;<span class="menu-text mu mu-matrix"></span>
   </div>
 
   <a [routerLink]="" queryParamsHandling="preserve" (click)="toggleMenu()" class="menu">
@@ -28,16 +29,16 @@
         <a class="nav-link" (click)="toggleMenu()" [routerLink]="['/']">Home</a>
       </li>
       <li class="nav-item" [routerLinkActive]="['link-active']">
-        <a class="nav-link" (click)="toggleMenu()" [routerLink]="['/registry']">Find</a>
+        <a class="nav-link" (click)="toggleMenu()" [routerLink]="['/registry']">Registry</a>
       </li>
       <li class="nav-item" [routerLinkActive]="['link-active']">
-        <a class="nav-link" (click)="toggleMenu()" [routerLink]="['/register']">Create</a>
+        <a class="nav-link" (click)="toggleMenu()" [routerLink]="['/register']">Register</a>
       </li>
-      <!-- <li class="nav-item" [routerLinkActive]="['link-active']">
+      <li class="nav-item" [routerLinkActive]="['link-active']">
         <a class="nav-link" (click)="toggleMenu()" [routerLink]="['/announcements']">Announcements</a>
-      </li> -->
+      </li>
       <li class="nav-item" [routerLinkActive]="['link-active']">
-        <a class="nav-link" (click)="toggleMenu()" [routerLink]="['/about']">About</a>
+        <a class="nav-link" (click)="toggleMenu()" [routerLink]="['/about']">About us</a>
       </li>
     </ul>
 
